@@ -17,9 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="dAA-tH-tdJ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32x-be-lvm">
+                                    <rect key="frame" x="8" y="15" width="175" height="14"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="toggleEditingMode:" destination="Nnz-6G-Ndd" eventType="touchUpInside" id="mOy-NR-sjz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTr-Ri-CLt">
+                                    <rect key="frame" x="191" y="15" width="175" height="14"/>
+                                    <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="addNewItem:" destination="Nnz-6G-Ndd" eventType="touchUpInside" id="cdt-Ld-brT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="32x-be-lvm" firstAttribute="leading" secondItem="dAA-tH-tdJ" secondAttribute="leading" constant="8" id="7yI-O0-G3U"/>
+                                <constraint firstItem="32x-be-lvm" firstAttribute="top" secondItem="dAA-tH-tdJ" secondAttribute="top" constant="15" id="IVa-Ls-8zA"/>
+                                <constraint firstAttribute="trailing" secondItem="nTr-Ri-CLt" secondAttribute="trailing" constant="8" id="IeW-Dp-oXS"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="centerY" secondItem="dAA-tH-tdJ" secondAttribute="centerY" id="JG1-xL-GAA"/>
+                                <constraint firstAttribute="bottom" secondItem="32x-be-lvm" secondAttribute="bottom" constant="15" id="NA1-UC-439"/>
+                                <constraint firstAttribute="trailing" secondItem="nTr-Ri-CLt" secondAttribute="trailing" constant="48" id="PYS-tr-3Kl"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="leading" secondItem="32x-be-lvm" secondAttribute="trailing" constant="8" id="V2m-nC-bOe"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="leading" secondItem="32x-be-lvm" secondAttribute="trailing" constant="8" id="apG-Ft-Lta"/>
+                                <constraint firstAttribute="bottom" secondItem="nTr-Ri-CLt" secondAttribute="bottom" constant="15" id="kVI-xn-SyC"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="leading" secondItem="32x-be-lvm" secondAttribute="trailing" constant="269" id="n2Y-j5-CCq"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="top" secondItem="dAA-tH-tdJ" secondAttribute="top" constant="15" id="sds-cP-W7R"/>
+                                <constraint firstItem="nTr-Ri-CLt" firstAttribute="width" secondItem="32x-be-lvm" secondAttribute="width" id="wQF-I9-CH7"/>
+                                <constraint firstItem="32x-be-lvm" firstAttribute="centerY" secondItem="dAA-tH-tdJ" secondAttribute="centerY" id="xrH-5m-RBh"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UIViewTableCell" id="iRm-zK-tD1">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iRm-zK-tD1" id="gFm-It-FSr">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
