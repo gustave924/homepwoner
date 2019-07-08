@@ -20,6 +20,18 @@ class ItemsViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
+        let footerView = UITextView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+        footerView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
+        footerView.textAlignment = .center
+        footerView.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
+        footerView.text = "No more items"
+        footerView.isEditable = false
+        tableView.tableFooterView = footerView
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Remove"
     }
 
     
@@ -64,6 +76,7 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        print(destinationIndexPath.row)
     }
     
     @IBAction func toggleEditingMode(_ sender: UIButton) {
