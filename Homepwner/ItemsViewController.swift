@@ -12,13 +12,23 @@ class ItemsViewController: UITableViewController {
 
     var itemStore: ItemStore!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        /*let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+        tableView.scrollIndicatorInsets = insets*/
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 65
     }
@@ -68,17 +78,19 @@ class ItemsViewController: UITableViewController {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
+    /*@IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
         if(tableView.isEditing){
+            sender.style = .
             sender.setTitle("Edit", for: .normal)
         }else{
+            s
             sender.setTitle("Done", for: .normal)
         }
         tableView.isEditing = !tableView.isEditing
-    }
+    }*/
     
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         let item = itemStore.createItem()
         if let itemIndex = itemStore.items.firstIndex(of: item){
             let indexPath = IndexPath(row: itemIndex, section: 0)
