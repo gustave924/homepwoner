@@ -100,7 +100,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GjV-6b-WDC">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GjV-6b-WDC" customClass="CustomUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="322" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -120,7 +120,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-wQ-lpW">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-wQ-lpW" customClass="CustomUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="51" y="0.0" width="324" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -140,11 +140,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-DL-ajr">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-DL-ajr" customClass="CustomUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="50" y="0.0" width="325" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="XWB-aq-E4w" id="Uii-j5-qbQ"/>
                                                 </connections>
@@ -152,11 +152,18 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzf-nF-mDW">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="473"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="435"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64v-8L-8H2">
+                                        <rect key="frame" x="0.0" y="557" width="375" height="30"/>
+                                        <state key="normal" title="Change Date"/>
+                                        <connections>
+                                            <segue destination="uST-Fe-dDU" kind="show" identifier="changeDate" id="C9o-Kr-2O4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -188,6 +195,47 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2554" y="81"/>
+        </scene>
+        <!--Change Date View Controller-->
+        <scene sceneID="fvy-er-1y3">
+            <objects>
+                <viewController id="uST-Fe-dDU" customClass="ChangeDateViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dwl-Jm-UA9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="USF-X6-kWE">
+                                <rect key="frame" x="0.0" y="79" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="584406323.90518904">
+                                    <!--2019-07-09 23:05:23 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHZ-hn-VVK">
+                                <rect key="frame" x="159.5" y="310" width="56" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="uST-Fe-dDU" eventType="touchUpInside" id="Yq7-r6-abf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="USF-X6-kWE" firstAttribute="trailing" secondItem="wAe-UF-pkP" secondAttribute="trailing" id="D47-Ig-XAR"/>
+                            <constraint firstItem="USF-X6-kWE" firstAttribute="leading" secondItem="wAe-UF-pkP" secondAttribute="leading" id="KVn-kn-88P"/>
+                            <constraint firstItem="gHZ-hn-VVK" firstAttribute="top" secondItem="USF-X6-kWE" secondAttribute="bottom" constant="15" id="hMg-iX-aFX"/>
+                            <constraint firstItem="USF-X6-kWE" firstAttribute="top" secondItem="wAe-UF-pkP" secondAttribute="top" constant="15" id="whc-n3-eyc"/>
+                            <constraint firstItem="gHZ-hn-VVK" firstAttribute="centerX" secondItem="dwl-Jm-UA9" secondAttribute="centerX" id="xxH-hn-XUK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wAe-UF-pkP"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="USF-X6-kWE" id="RbT-AM-sK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zvo-Xc-kfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3318" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TRJ-Yk-DBg">
