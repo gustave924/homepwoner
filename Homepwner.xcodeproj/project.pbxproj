@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E242B02C22D3D58E00A10803 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242B02B22D3D58E00A10803 /* ItemViewCell.swift */; };
 		E2520C8A22D2C5320037B53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2520C8922D2C5320037B53F /* AppDelegate.swift */; };
 		E2520C8F22D2C5320037B53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2520C8D22D2C5320037B53F /* Main.storyboard */; };
 		E2520C9122D2C5330037B53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2520C9022D2C5330037B53F /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E242B02B22D3D58E00A10803 /* ItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		E2520C8622D2C5320037B53F /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2520C8922D2C5320037B53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2520C8E22D2C5320037B53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				E2520CB922D35F500037B53F /* Item.swift */,
 				E2520CBB22D3613F0037B53F /* ItemStore.swift */,
 				E2520C8922D2C5320037B53F /* AppDelegate.swift */,
+				E242B02B22D3D58E00A10803 /* ItemViewCell.swift */,
 				E2520CB722D2C6390037B53F /* ItemsViewController.swift */,
 				E2520C8D22D2C5320037B53F /* Main.storyboard */,
 				E2520C9022D2C5330037B53F /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E242B02C22D3D58E00A10803 /* ItemViewCell.swift in Sources */,
 				E2520CB822D2C6390037B53F /* ItemsViewController.swift in Sources */,
 				E2520CBA22D35F500037B53F /* Item.swift in Sources */,
 				E2520CBC22D3613F0037B53F /* ItemStore.swift in Sources */,
