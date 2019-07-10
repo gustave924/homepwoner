@@ -8,12 +8,21 @@
 
 import UIKit
 
-class Item: NSObject{
+class Item: NSObject, NSCoding{
+    
+    let NAME = "NAME"
+    let VALUE_IN_DOLLARS = "valueInDollars"
+    let SERIAL_NUMBER = "serialNumber"
+    let DATE_CREATED = "dateCreated"
+    let IMAGE_ID = "imageId"
+    
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: Date
     let imageId: String
+    
+   
     
     init(name: String, valueInDollars: Int, serialNumber: String?){
         self.name = name
@@ -46,5 +55,25 @@ class Item: NSObject{
         }else{
             self.init(name:"", valueInDollars: 0, serialNumber:nil)
         }
+    }
+    
+    
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: NAME)
+        aCoder.encode(valueInDollars, forKey: VALUE_IN_DOLLARS)
+        aCoder.encode(serialNumber, forKey: SERIAL_NUMBER)
+        aCoder.encode(dateCreated, forKey: DATE_CREATED)
+        aCoder.encode(imageId, forKey: IMAGE_ID)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: NAME) as! String
+        valueInDollars = aDecoder.decodeInteger(forKey: VALUE_IN_DOLLARS)
+        serialNumber = aDecoder.decodeObject(forKey: SERIAL_NUMBER) as! String
+        dateCreated = aDecoder.decodeObject(forKey: DATE_CREATED) as! Date
+        imageId = aDecoder.decodeObject(forKey: IMAGE_ID) as! String
+        
+        super.init()
     }
 }

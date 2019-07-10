@@ -20,6 +20,46 @@ class ImageStore{
     }
     
     func getImage(id: String) -> UIImage?{
-        return cache.object(forKey: id as NSString)
+        if let exisitingImage = cache.object(forKey: id as NSString){
+            return exisitingImage
+        }
+        
+        let url = imageURl(forKey: id)
+        guard let imageAtDisk = UIImage(contentsOfFile: url.path) else {
+            return nil
+        }
+        cache.setObject(imageAtDisk, forKey: id as NSString)
+        return imageAtDisk
+    }
+    
+    func imageURl(forKey key: String) -> URL{
+        let dirs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let dir = dirs.first!
+        return dir.appendingPathComponent(key)
+    }
+    
+    func setImage(_ image: UIImage, forKey key:String){
+        let url = imageURl(forKey: key)
+        let imageData = image.jpegData(compressionQuality: 0.5)
+        do{
+            try imageData?.write(to: url)
+        }catch{
+            print("Error occured: \(error)")
+        }
+        
+    }
+    
+    func deleteImage(forKey key:String){
+        
+        cache.removeObject(forKey: key as NSString)
+        
+        let url = imageURl(forKey: key)
+        do{
+            try FileManager.default.removeItem(at: url)
+        }catch{
+            print("Error occured: \(error)")
+        }
+        
+        
     }
 }
