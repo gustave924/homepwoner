@@ -173,6 +173,11 @@
                                             <action selector="takePhoto:" destination="XWB-aq-E4w" id="ueB-bB-vLP"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="stop" id="n4H-mR-mn8">
+                                        <connections>
+                                            <action selector="removeImage:" destination="XWB-aq-E4w" id="wWm-bo-FCc"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

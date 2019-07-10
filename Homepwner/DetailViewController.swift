@@ -92,17 +92,24 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             imagePicker.sourceType = .photoLibrary
         }
         imagePicker.delegate = self
-        
+        imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        imageView.image = image
-        imageStore.setImage(id: item.imageId, image: image)
-        dismiss(animated: true, completion: nil)
+        if let imageN = info[UIImagePickerController.InfoKey.editedImage] {
+            let image = imageN as! UIImage
+            imageView.image = image
+            imageStore.setImage(id: item.imageId, image: image)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
+  
+    @IBAction func removeImage(_ sender: UIBarButtonItem) {
+        imageStore.deleteImage(id: item.imageId)
+        imageView.image = nil
+    }
 }
