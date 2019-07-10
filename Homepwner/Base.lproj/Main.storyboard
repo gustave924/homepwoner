@@ -88,8 +88,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-K0-L69">
-                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-K0-L69">
+                                <rect key="frame" x="0.0" y="72" width="375" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-9W-Raj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -112,7 +112,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5QO-hi-6Gd">
-                                        <rect key="frame" x="0.0" y="38" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="31" width="375" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAw-89-r41">
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
@@ -132,7 +132,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qwO-pu-yWa">
-                                        <rect key="frame" x="0.0" y="76" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="62" width="375" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-Cr-buQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
@@ -152,20 +152,41 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzf-nF-mDW">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="473"/>
+                                        <rect key="frame" x="0.0" y="93" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-nD-nIn">
+                                        <rect key="frame" x="0.0" y="114.5" width="375" height="428.5"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-o6-bd5">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mxs-rq-Ig9"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="A0F-ZQ-jYY">
+                                        <connections>
+                                            <action selector="takePhoto:" destination="XWB-aq-E4w" id="ueB-bB-vLP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4JV-Y4-ojq" firstAttribute="bottom" secondItem="RBR-K0-L69" secondAttribute="bottom" constant="8" id="AJt-Gh-oTA"/>
                             <constraint firstItem="RBR-K0-L69" firstAttribute="top" secondItem="4JV-Y4-ojq" secondAttribute="top" constant="8" id="FFM-Ig-sf0"/>
                             <constraint firstItem="RBR-K0-L69" firstAttribute="leading" secondItem="4JV-Y4-ojq" secondAttribute="leading" id="GBO-SQ-gDD"/>
+                            <constraint firstAttribute="bottom" secondItem="ZAg-o6-bd5" secondAttribute="bottom" id="I6E-GN-r2L"/>
+                            <constraint firstItem="ZAg-o6-bd5" firstAttribute="leading" secondItem="4JV-Y4-ojq" secondAttribute="leading" id="NbM-s4-d0d"/>
+                            <constraint firstItem="ZAg-o6-bd5" firstAttribute="top" secondItem="RBR-K0-L69" secondAttribute="bottom" constant="8" id="OAg-Gj-pLM"/>
+                            <constraint firstItem="ZAg-o6-bd5" firstAttribute="trailing" secondItem="4JV-Y4-ojq" secondAttribute="trailing" id="P4n-fC-pLP"/>
+                            <constraint firstItem="ZAg-o6-bd5" firstAttribute="top" secondItem="RBR-K0-L69" secondAttribute="bottom" constant="8" id="VWC-Lw-4zH"/>
+                            <constraint firstItem="ZAg-o6-bd5" firstAttribute="bottom" secondItem="4JV-Y4-ojq" secondAttribute="bottom" id="nRd-R4-Fsy"/>
                             <constraint firstItem="4JV-Y4-ojq" firstAttribute="trailing" secondItem="RBR-K0-L69" secondAttribute="trailing" id="qpj-qw-A74"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4JV-Y4-ojq"/>
@@ -175,6 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="Wzf-nF-mDW" id="Pz3-px-49b"/>
+                        <outlet property="imageView" destination="Wqp-nD-nIn" id="cKC-7V-H6K"/>
                         <outlet property="nameTextField" destination="GjV-6b-WDC" id="gPZ-sQ-bbw"/>
                         <outlet property="serialNumberField" destination="4pO-wQ-lpW" id="w6R-iO-fVD"/>
                         <outlet property="valueField" destination="eyL-DL-ajr" id="1ef-r4-1N0"/>
@@ -187,7 +209,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2554" y="81"/>
+            <point key="canvasLocation" x="2552.8000000000002" y="80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TRJ-Yk-DBg">
